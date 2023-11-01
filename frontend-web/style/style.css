@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header p {
+    font-style: italic;
+}
+
+.profile {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile h1 {
+    margin: 10px 0;
+}
+
+.profile p {
+    font-size: 18px;
+}
+
+.follow-button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.following-button {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-container {
+    display: flex;
+    background-color: white;
+    margin: 15px 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-personal-info {
+    margin: 50px 25px;
+    letter-spacing: 2px;
+}
+
+.profile-sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+}
+
+/* .profile-sidebar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profile-sidebar h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.profile-sidebar p {
+    font-size: 14px;
+} */
+
+.post-container {
+    flex: 3;
+    padding: 20px;
+    text-align: center;
+}
+
+/* .button {
+    text-align: center; 
+    margin-top: 20px; 
+} */
+.post{
+    box-shadow: 0 2px 5px black;
+    border-bottom: 1px solid #ccc; 
+    margin: 10px;
+    text-align: left;
+}
+
+
+.like-button, .comment-button{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 2px;
+}
+
+.liked-button {
+    background-color: white;
+    color: red;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 2px;
+}
+
+.new-story-button, .edit-profile-button{
+    width: 90%; 
+    box-shadow: 0 2px 5px black;
+    border-bottom: 1px solid #ccc; 
+    padding: 5px 20px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hyperlink-style {
+    color: grey; 
+    text-decoration: none;
+}
+

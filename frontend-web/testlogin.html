@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .login-container { max-width: 300px; margin: auto; padding: 20px; border: 1px solid #ddd; }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="loginStatus"></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const status = document.getElementById('loginStatus');
+
+            const socket = new WebSocket('ws://localhost:1234');
+            socket.onopen = function() {
+                socket.send(username + ':' + password);
+            };
+
+            socket.onmessage = function(event) {
+                status.innerText = event.data;
+                socket.close();
+            };
+
+            socket.onerror = function(event) {
+                status.innerText = "Error connecting to server.";
+                socket.close();
+            };
+        }
+    </script>
+</body>
+</html>

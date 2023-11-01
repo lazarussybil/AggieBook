@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <title>Social Media Profile</title>
+</head>
+<body>
+    <header>
+        <h1><span class="DisplayName"></span></h1>
+        <p class="bios"> But my life is perfect. </p>
+        <button onclick="location.href='friendpage.html'" class="search-friends-button">Search Friends</button>
+    </header>
+    <style>
+        .search-friends-button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    
+    <div class="profile">
+        <img src="./images/profile-picture.jpg" alt="Profile Picture">
+        <h1><span class="DisplayName2"></span></h1>
+        <p> <a href="following.html" class="hyperlink-style"><span id="followingCounter"></span> Following</a> | <a href="follower.html" class="hyperlink-style"><span id="followerCounter"></span> Followers</a> </p>
+        <button class="follow-button" id="followButton">To be implemented</button>
+        <script src="scripts/followButton.js"></script>
+    </div>
+    
+    
+    <div class="profile-container">
+        <div class="profile-personal-info"> 
+            <!-- Function is implemented within personalInfo.js -->
+            <button class="edit-profile-button" id="editProfileButton">Edit Profile</button>
+            <p>Gender: <span class="Gender"></span></p>
+            <p>Age: <span class="Age-Birth"></span></p>
+            <p>Occupation: <span class="Occupation"></span></p>
+            <p>Education: <span class="Education"></span></p>
+            <p>Location: <span class="Location"></span></p>
+        </div>
+        <div class="post-container">
+            <button class="new-story-button" id="newStoryButton" onclick="openNewStoryModal()">new story</button>
+        </div>
+        <script src="scripts/post.js"></script>
+    </div>
+
+
+    <!-- edit profile page -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Your Profile</h2>
+            <p>Gender: <span class="GenderModal"></span>
+                <input type="text" id="genderInput" placeholder="New Gender">
+                <button onclick="updateAttribute('Gender', 'genderInput')">Update</button>
+            </p>
+        
+            <!-- Age -->
+            <p>Age: <span class="Age-BirthModal"></span>
+                <input type="text" id="ageInput" placeholder="New Age">
+                <button onclick="updateAttribute('Age-Birth', 'ageInput')">Update</button>
+            </p>
+        
+            <!-- Occupation -->
+            <p>Occupation: <span class="OccupationModal"></span>
+                <input type="text" id="occupationInput" placeholder="New Occupation">
+                <button onclick="updateAttribute('Occupation', 'occupationInput')">Update</button>
+            </p>
+        
+            <!-- Education -->
+            <p>Education: <span class="EducationModal"></span>
+                <input type="text" id="educationInput" placeholder="New Education">
+                <button onclick="updateAttribute('Education', 'educationInput')">Update</button>
+            </p>
+        
+            <!-- Location -->
+            <p>Location: <span class="LocationModal"></span>
+                <input type="text" id="locationInput" placeholder="New Location">
+                <button onclick="updateAttribute('Location', 'locationInput')">Update</button>
+            </p>
+            <button id="editProfileCloseModalBtn">Close</button>
+        </div>
+    </div>
+    <script src="scripts/personalInfo.js"></script>
+
+    <!-- comment page -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="post-content">
+                <h2>Post Title</h2>
+                <p>This is the content of the post.</p>
+                <p><span class="like-count">0</span> Likes</p>
+            </div>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <ul id="commentList">
+                </ul>
+                <input type="text" id="commentInput" placeholder="Add a comment">
+                <button id="addCommentButton">Add Comment</button>
+            </div>
+            <button id="commentCloseModalButton" class="close-modal-button">Close</button>
+        </div>
+    </div>
+    <script src="scripts/modal.js"></script>
+
+    <!-- new story page -->
+    <div class="modal" id="newStoryModal">
+        <div class="modal-content">
+            <h2>Write a New Story</h2>
+            
+            <label for="title">Title:</label>
+            <input type="text" id="newStoryTitle" name="newStoryTitle" required>
+            <br><br>
+
+            <label for="content">Content:</label>
+            <textarea id="newStoryContent" name="newStoryContent" rows="10" cols="50" required></textarea>
+
+            <br><br>
+
+            <button id="newStoryCompleteBtn">Complete</button>
+            <button id="newStoryCancelBtn">Cancel</button>
+        </div>
+    </div>
+    <script src="scripts/newStoryModal.js"></script>
+
+</body>
+
+</html>
+
+
