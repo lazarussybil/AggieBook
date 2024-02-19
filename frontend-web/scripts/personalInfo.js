@@ -79,13 +79,13 @@ function updateAttribute(className, inputId) {
         val = inputValue;
     };
 
-    fetch('/userinfo', {
+    fetch('/users/userinfo', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            userID: parseInt(localStorage.getItem("userID")),
+            userID: localStorage.getItem("userID"),
             attr: attr,
             value: val,
         }),

@@ -22,7 +22,7 @@ addCommentButton.addEventListener('click', () => {
         posts[modalPostIndex].comments.push({username: username, content: commentText});
         commentList.appendChild(commentItem);
 
-        fetch('/comment', {
+        fetch('/posts/comment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

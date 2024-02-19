@@ -5,7 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     let password = document.getElementById("newPassword").value;
     let displayname = document.getElementById("newDisplayName").value;
 
-    fetch('/register', {
+    fetch('/users/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

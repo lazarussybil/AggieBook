@@ -8,7 +8,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
     const token = document.getElementById('searchInput').value;
 
     // Fetch users from the server based on the search token
-    fetch('/searchUser', {
+    fetch('/users/searchUser', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -22,6 +22,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
     .then(data => {
         if (data.status === 'success') {
             users = data.data.users;
+            // alert(`users ${JSON.parse(users)} !`);
             populateUserList();
         } else {
             alert('Error fetching users.');
@@ -51,13 +52,13 @@ function populateUserList() {
             button.innerText = 'Unfollow';
             button.className = 'unfollow';
             button.onclick = function() {
-                updateUserFollowStatus(user.userID, false);
+                updateUserFollowStatus(user._id, false);
             };
         } else {
             button.innerText = 'Follow';
             button.className = 'follow';
             button.onclick = function() {
-                updateUserFollowStatus(user.userID, true);
+                updateUserFollowStatus(user._id, true);
             };
         }
 
@@ -70,9 +71,10 @@ function populateUserList() {
 }
 
 function updateUserFollowStatus(targetUserID, follow) {
-    const endpoint = follow ? '/follow' : '/unfollow';
+    const endpoint = follow ? '/users/follow' : '/users/unfollow';
+    // alert(`UserID ${currentUserID} targetUserID ${targetUserID}!`);
 
-    // Send the current userID and target userID to the backend
+    // Send the current userID and target userID  to the backend
     fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -80,7 +82,7 @@ function updateUserFollowStatus(targetUserID, follow) {
         },
         body: JSON.stringify({
             userID: currentUserID,
-            targetUserID: targetUserID
+            target_user_id: targetUserID
         })
     })
     .then(response => response.json())

@@ -19,7 +19,7 @@ newStoryCompleteBtn.addEventListener('click', () => {
         alert('title or content cannot be empty');
     } else {
         
-        fetch('/newstory', {
+        fetch('/posts/newstory', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

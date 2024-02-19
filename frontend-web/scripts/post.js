@@ -77,7 +77,7 @@ function freshPosts() {
             isLiked = !isLiked; 
             let postID = post.postID;
             // isLiked = !isLiked;
-            fetch('/like', {
+            fetch('/posts/like', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
